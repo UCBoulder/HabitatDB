@@ -15,7 +15,7 @@
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "build": "babel create-table.mjs --out-file dist/bundle.mjs",
-      "start": "node src/test-Creds.mjs",
+      "start": "node src/main.js",
       "babel": "npx babel"
     },
     "keywords": [],

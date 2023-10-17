@@ -1,13 +1,9 @@
-import { CreateTableCommand, DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { CreateTableCommand } from "@aws-sdk/client-dynamodb";
+import { client } from '../index.js';
 
-const client = new DynamoDBClient({});
-
-export const main = async () => {
+export const createTable = async () => {
   const command = new CreateTableCommand({
     TableName: "EspressoDrinks",
-    // For more information about data types,
-    // see https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes and
-    // https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.LowLevelAPI.html#Programming.LowLevelAPI.DataTypeDescriptors
     AttributeDefinitions: [
       {
         AttributeName: "DrinkName",
@@ -30,4 +26,3 @@ export const main = async () => {
   console.log(response);
   return response;
 };
-
