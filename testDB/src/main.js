@@ -1,5 +1,5 @@
-import { createTable } from './db/operations/createTable.js';
-import { insertItem } from './db/operations/insertItem.js';
+import { createTable } from './db/operations/createTable.mjs';
+import { insertItem } from './db/operations/insertItem.mjs';
 
 const main = async () => {
   // Call the createTable function
