@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.433.0",
+    "@aws-sdk/lib-dynamodb": "^3.433.0",
+    "@typedorm/common": "^1.15.4",
+    "@typedorm/core": "^1.15.4"
+  }
+}
