@@ -1,0 +1,45 @@
+Primary Key:
+•	Partition Key: UserID (String)
+•	Sort Key: ObservationID (String)
+Attributes:
+•	UserID (String)
+•	ObservationID (String)
+•	PhotoFileLocation (String) (currently S3 file location)
+•	Date (String or timestamp) -> get from time of upload or from the photo
+•	LocationData (String)
+•	Notes (String) -> has template -> could be called LocationDescription
+•	verificationRating (1,2,3) yes no maybe
+•	Verifier (String)
+• Treated(Boolean) -> not right now
+
+GSI Name: VerificationIndex
+GSI Primary Key:
+•	Partition Key: HasBeenVerified (Boolean) -> sort off not rated then, maybe then yes 
+•	Sort Key: UserID (String)
+
+
+PhotoData:
+    potentially get the data form the photo itself
+
+
+
+
+
+
+LocationData object:
+{
+  position: {
+    timestamp: 1697650532099,
+    mocked: false,
+    provider: 'fused',
+    coords: {
+      speed: 0,
+      heading: 0,
+      altitude: 0,
+      accuracy: 2000,
+      longitude: -122.08395287867832,
+      altitudeAccuracy: 0,
+      latitude: 37.42342342342342
+    }
+  }
+}
