@@ -1,12 +1,13 @@
 import { AttributeValue } from "@aws-sdk/client-dynamodb";
 
-export interface CheatUpload {
+export interface Observation{
     UserID: AttributeValue;
-    CheatUploadID: AttributeValue;
-    S3FileLocationStored: AttributeValue;
-    timeDate: AttributeValue;
-    LocationInfo: AttributeValue;
-    Notes: AttributeValue;
-    HasBeenVerified: AttributeValue;
-    Verifier: AttributeValue;
+    ObservationID: AttributeValue;
+    PhotoFileLocation?: AttributeValue;
+    Date?: AttributeValue;
+    LocationData?: AttributeValue;
+    Notes?: AttributeValue;
+    VerificationRating?: AttributeValue;
+    Verifier?: AttributeValue;
+    Treated?: AttributeValue;
 }

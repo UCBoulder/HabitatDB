@@ -14,19 +14,19 @@ const client_dynamodb_1 = require("@aws-sdk/client-dynamodb");
 const index_js_1 = require("../index.js");
 const createTable = () => __awaiter(void 0, void 0, void 0, function* () {
     const command = new client_dynamodb_1.CreateTableCommand({
-        TableName: "CheatUploads",
+        TableName: "Observation",
         AttributeDefinitions: [
             {
                 AttributeName: "UserID",
                 AttributeType: "S",
             },
             {
-                AttributeName: "CheatUploadID",
+                AttributeName: "ObservationID",
                 AttributeType: "S",
             },
             {
-                AttributeName: "HasBeenVerified",
-                AttributeType: "S", //is a boolean
+                AttributeName: "VerificationRating",
+                AttributeType: "N",
             },
         ],
         KeySchema: [
@@ -35,7 +35,7 @@ const createTable = () => __awaiter(void 0, void 0, void 0, function* () {
                 KeyType: "HASH", // Partition Key
             },
             {
-                AttributeName: "CheatUploadID",
+                AttributeName: "ObservationID",
                 KeyType: "RANGE", // Sort Key
             },
         ],
@@ -48,7 +48,7 @@ const createTable = () => __awaiter(void 0, void 0, void 0, function* () {
                 IndexName: "VerificationIndex",
                 KeySchema: [
                     {
-                        AttributeName: "HasBeenVerified",
+                        AttributeName: "VerificationRating",
                         KeyType: "HASH", // Partition Key
                     },
                     {

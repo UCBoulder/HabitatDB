@@ -14,16 +14,16 @@ console.log(process.cwd());
 const DB_Operations_1 = require("./DB-files/DB-Operations");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, DB_Operations_1.createTable)();
-    const newCheatUpload = {
+    const newObservation = {
         UserID: { S: 'someUserId' },
-        CheatUploadID: { S: 'someCheatUploadID' },
-        S3FileLocationStored: { S: 'someLocation' },
-        timeDate: { S: new Date().toISOString() },
-        LocationInfo: { S: 'someLocationInfo' },
+        ObservationID: { S: 'someCheatUploadID' },
+        PhotoFileLocation: { S: 'someLocation' },
+        Date: { S: new Date().toISOString() },
+        LocationData: { S: 'someLocationInfo' },
         Notes: { S: 'someNotes' },
-        HasBeenVerified: { BOOL: true },
+        VerificationRating: { N: '3' },
         Verifier: { S: 'someVerifier' },
     };
-    yield (0, DB_Operations_1.insertCheatUpload)(newCheatUpload);
+    yield (0, DB_Operations_1.insertObservation)(newObservation);
 });
 main().catch((error) => console.error("Error:", error));

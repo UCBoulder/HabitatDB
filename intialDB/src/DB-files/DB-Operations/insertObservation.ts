@@ -1,11 +1,11 @@
 import { PutItemCommand, PutItemCommandInput, AttributeValue } from "@aws-sdk/client-dynamodb";
-import { CheatUpload } from './interfaces';
+import { Observation } from './interfaces';
 import { client } from '../index.js';
 
-export const insertCheatUpload = async (cheatUpload: CheatUpload) => {
+export const insertObservation = async (Observation: Observation) => {
   const params: PutItemCommandInput = {
     TableName: "CheatUploads",
-    Item: cheatUpload as unknown as Record<string, AttributeValue>,
+    Item: Observation as unknown as Record<string, AttributeValue>,
   };
 
   try {

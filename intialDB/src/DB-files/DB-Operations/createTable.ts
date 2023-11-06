@@ -3,19 +3,19 @@ import { client } from "../index.js";
 
 export const createTable = async () => {
   const command = new CreateTableCommand({
-    TableName: "CheatUploads",
+    TableName: "Observation",
     AttributeDefinitions: [
       {
         AttributeName: "UserID",
         AttributeType: "S",
       },
       {
-        AttributeName: "CheatUploadID",
+        AttributeName: "ObservationID",
         AttributeType: "S",
       },
       {
-        AttributeName: "HasBeenVerified",
-        AttributeType: "S",//is a boolean
+        AttributeName: "VerificationRating",
+        AttributeType: "N",
       },
     ],
     KeySchema: [
@@ -24,7 +24,7 @@ export const createTable = async () => {
         KeyType: "HASH", // Partition Key
       },
       {
-        AttributeName: "CheatUploadID",
+        AttributeName: "ObservationID",
         KeyType: "RANGE", // Sort Key
       },
     ],
@@ -37,7 +37,7 @@ export const createTable = async () => {
         IndexName: "VerificationIndex",
         KeySchema: [
           {
-            AttributeName: "HasBeenVerified",
+            AttributeName: "VerificationRating",
             KeyType: "HASH", // Partition Key
           },
           {
