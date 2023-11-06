@@ -1,7 +1,7 @@
 {
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.433.0",
+    "@aws-sdk/client-dynamodb": "^3.441.0",
     "@aws-sdk/lib-dynamodb": "^3.433.0",
     "@typedorm/common": "^1.15.4",
     "@typedorm/core": "^1.15.4",
@@ -11,11 +11,12 @@
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
-    "@types/node": "^20.8.7",
+    "@types/node": "^20.8.10",
     "typescript": "^5.2.2"
   },
-
   "scripts": {
-    "start": "tsc && node dist/main.js"
+    "start": "tsc && node dist/main.js",
+    "build": "tsc",
+    "test": "jest"
   }
 }

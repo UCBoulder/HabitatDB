@@ -1,22 +1,23 @@
-import { createTable } from '/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/Fall-2023/Senior_Project_APP/HabitatDB/intialDB/src/DB-files/DB-Operations/createTable.mjs';
-import { insertCheatUpload } from './HabitatDB/intialDB/src/DB-files/DB-Operations/insertCheatUpload.mjs';
-
+// The code snippet imports two functions, `createTable` and `insertCheatUpload`, and then defines a `main` function. The `main` function calls `createTable` to create a table in a database and then inserts a new cheat
+console.log(process.cwd());
+import { createTable, insertObservation } from './DB-files/DB-Operations';
+import { Observation} from './DB-files/DB-Operations/interfaces';
 
 const main = async () => {
   await createTable();
 
-  const newCheatUpload = {
-    UserID: "user-1",
-    CheatUploadID: "upload-1",
-    S3FileLocationStored: "path/to/file",
-    timeDate: "2023-10-25T09:00:00Z",
-    LocationInfo: "New York",
-    Notes: "Some notes about the cheat upload",
-    HasBeenVerified: false,
-    Verifier: "verifier-1",
+  const newObservation: Observation = {
+    UserID: { S: 'someUserId' },
+    ObservationID: { S: 'someCheatUploadID' },
+    PhotoFileLocation: { S: 'someLocation' },
+    Date: { S: new Date().toISOString() },
+    LocationData: { S: 'someLocationInfo' },
+    Notes: { S: 'someNotes' },
+    VerificationRating: {N : '3' },
+    Verifier: { S: 'someVerifier' },
   };
-
-  await insertCheatUpload(newCheatUpload);
+  
+  await insertObservation(newObservation);
 };
 
 main().catch((error) => console.error("Error:", error));
