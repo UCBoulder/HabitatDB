@@ -25,5 +25,6 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         Verifier: { S: 'someVerifier' },
     };
     yield (0, DB_Operations_1.insertObservation)(newObservation);
+    yield (0, DB_Operations_1.viewAllObservations)();
 });
 main().catch((error) => console.error("Error:", error));

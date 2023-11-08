@@ -3,12 +3,12 @@ import { client } from "../index.js";
 
 export const createTable = async () => {
   const command = new CreateTableCommand({
-    TableName: "Observation",
+    TableName: "Observations",
     AttributeDefinitions: [
       {
         AttributeName: "UserID",
         AttributeType: "S",
-      },
+    },
       {
         AttributeName: "ObservationID",
         AttributeType: "S",
