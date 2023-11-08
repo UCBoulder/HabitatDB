@@ -7,7 +7,7 @@ export interface Observation{
     Date?: AttributeValue;
     LocationData?: AttributeValue;
     Notes?: AttributeValue;
-    VerificationRating?: AttributeValue;
+    VerificationRating: AttributeValue;
     Verifier?: AttributeValue;
     Treated?: AttributeValue;
 }

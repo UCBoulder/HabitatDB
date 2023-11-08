@@ -17,3 +17,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./createTable"), exports);
 __exportStar(require("./insertObservation"), exports);
+__exportStar(require("./viewAllObservations"), exports);
+__exportStar(require("./batchUpload"), exports);
+__exportStar(require("./interfaces"), exports);

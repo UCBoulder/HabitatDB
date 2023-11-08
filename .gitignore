@@ -1,2 +1,31 @@
 # node_modules
-node_modules
+node_modules/
+
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+#Compiled files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Compiled output
+dist/
+out/
+build/
+target/
+*.class
+#log files
+*.log
+#Config files
+.env
+config/*.json
+
+# OS generated files
+*.bak
+*.swp
+.DS_Store
+

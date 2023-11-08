@@ -14,13 +14,13 @@ const client_dynamodb_1 = require("@aws-sdk/client-dynamodb");
 const index_js_1 = require("../index.js");
 const insertObservation = (Observation) => __awaiter(void 0, void 0, void 0, function* () {
     const params = {
-        TableName: "CheatUploads",
+        TableName: "Observations",
         Item: Observation,
     };
     try {
         const command = new client_dynamodb_1.PutItemCommand(params);
         const response = yield index_js_1.client.send(command);
-        console.log("Cheat upload inserted successfully:", response);
+        console.log("Observation inserted successfully:", response);
         return response;
     }
     catch (error) {

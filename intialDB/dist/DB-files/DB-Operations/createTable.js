@@ -14,7 +14,7 @@ const client_dynamodb_1 = require("@aws-sdk/client-dynamodb");
 const index_js_1 = require("../index.js");
 const createTable = () => __awaiter(void 0, void 0, void 0, function* () {
     const command = new client_dynamodb_1.CreateTableCommand({
-        TableName: "Observation",
+        TableName: "Observations",
         AttributeDefinitions: [
             {
                 AttributeName: "UserID",
