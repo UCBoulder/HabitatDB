@@ -8,7 +8,7 @@ Attributes:
 •	Date (String or timestamp) -> get from time of upload or from the photo
 •	LocationData (String)
 •	Notes (String) -> has template -> could be called LocationDescription
-•	verificationRating (1,2,3) yes no maybe
+•	verificationRating (0,1,2) no maybe yes
 •	Verifier (String)
 • Treated(Boolean) -> not right now
 
